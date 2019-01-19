@@ -5,4 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DistributorRepository extends JpaRepository<Distributor, Long> {
 
+    Distributor findByName(String name);
+
+    void deleteByName(String name);
+
 }
