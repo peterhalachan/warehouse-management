@@ -1,9 +1,11 @@
 package com.warehousemanagement.warehousemanagement.dto;
 
+import java.io.Serializable;
+
 import lombok.Data;
 
 @Data
-public class DistributorDto {
+public class DistributorDto implements Serializable {
 
     private String name;
     private String phoneNumber;

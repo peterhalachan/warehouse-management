@@ -27,7 +27,7 @@ public class AddressAssemblerTest {
 
     @Test
     public void fromDto_validDistributorDto_address() {
-        final Address address = addressAssembler.fromDto(TestData.getDistributorDto());
+        final Address address = addressAssembler.fromDto(TestData.createDistributorDto());
 
         assertThat(address).isNotNull();
         assertThat(address.getCountry()).isEqualTo(TestData.COUNTRY);

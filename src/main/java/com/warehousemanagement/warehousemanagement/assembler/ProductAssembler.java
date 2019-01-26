@@ -1,5 +1,7 @@
 package com.warehousemanagement.warehousemanagement.assembler;
 
+import java.util.Objects;
+
 import com.warehousemanagement.warehousemanagement.dto.ProductDto;
 import com.warehousemanagement.warehousemanagement.entity.Product;
 import com.warehousemanagement.warehousemanagement.repository.DistributorRepository;
@@ -20,7 +22,7 @@ public class ProductAssembler extends AbstractAsembler<Product, ProductDto> {
         productDto.setBrandName(product.getBrandName());
         productDto.setDescription(product.getDescription());
         productDto.setNumberOfUNits(product.getNumberOfUNits());
-        productDto.setDistributorName(product.getDistributor().getName());
+        productDto.setDistributorName(Objects.nonNull(product.getDistributor()) ?  product.getDistributor().getName() : null);
         return productDto;
     }
 

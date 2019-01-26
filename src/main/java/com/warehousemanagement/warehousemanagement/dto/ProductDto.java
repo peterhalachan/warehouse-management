@@ -1,9 +1,11 @@
 package com.warehousemanagement.warehousemanagement.dto;
 
+import java.io.Serializable;
+
 import lombok.Data;
 
 @Data
-public class ProductDto {
+public class ProductDto implements Serializable {
 
     private String brandName;
     private String productName;

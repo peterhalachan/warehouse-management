@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class AddressAssembler extends AbstractAsembler<Address, DistributorDto> {
 
-    @Override public DistributorDto toDto(Address address) {
+    @Override
+    public DistributorDto toDto(Address address) {
         final DistributorDto distributorDto = new DistributorDto();
         distributorDto.setCountry(address.getCountry());
         distributorDto.setCity(address.getCity());
@@ -16,7 +17,8 @@ public class AddressAssembler extends AbstractAsembler<Address, DistributorDto> 
         return distributorDto;
     }
 
-    @Override public Address fromDto(DistributorDto distributorDto) {
+    @Override
+    public Address fromDto(DistributorDto distributorDto) {
         final Address address = new Address();
         address.setCity(distributorDto.getCity());
         address.setCountry(distributorDto.getCountry());

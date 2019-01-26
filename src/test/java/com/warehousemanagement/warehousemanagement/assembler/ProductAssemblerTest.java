@@ -25,7 +25,7 @@ public class ProductAssemblerTest {
 
     @Test
     public void toDto_validtProduct_productDto() {
-        final ProductDto productDto = productAssembler.toDto(TestData.getProduct());
+        final ProductDto productDto = productAssembler.toDto(TestData.createProduct(TestData.createDistributorWithoutProducts()));
 
         assertThat(productDto).isNotNull();
         assertThat(productDto.getProductName()).isEqualTo(TestData.PRODUCT_NAME);
@@ -37,9 +37,9 @@ public class ProductAssemblerTest {
 
     @Test
     public void fromDto_validProductDto_product() {
-        when(distributorRepository.findByName(eq(TestData.DISTRIBUTOR_NAME))).thenReturn(TestData.getDistributor());
+        when(distributorRepository.findByName(eq(TestData.DISTRIBUTOR_NAME))).thenReturn(TestData.createDistributorWithoutProducts());
 
-        final Product product = productAssembler.fromDto(TestData.getProductDto());
+        final Product product = productAssembler.fromDto(TestData.createProductDto());
 
         assertThat(product).isNotNull();
         assertThat(product.getProductName()).isEqualTo(TestData.PRODUCT_NAME);

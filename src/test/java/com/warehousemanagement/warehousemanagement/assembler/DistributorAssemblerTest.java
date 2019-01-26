@@ -27,7 +27,7 @@ public class DistributorAssemblerTest {
     public void toDto_validDistributor_distributorDto() {
         when(addressAssembler.toDto(any(Address.class))).thenReturn(new DistributorDto());
 
-        final DistributorDto distributorDto = distributorAssembler.toDto(TestData.getDistributor());
+        final DistributorDto distributorDto = distributorAssembler.toDto(TestData.createDistributorWithoutProducts());
 
         assertThat(distributorDto).isNotNull();
         assertThat(distributorDto.getName()).isEqualTo(TestData.DISTRIBUTOR_NAME);
@@ -43,7 +43,7 @@ public class DistributorAssemblerTest {
     public void fromDto_validDistributorDto_distributor() {
         when(addressAssembler.fromDto(any(DistributorDto.class))).thenReturn(new Address());
 
-        final Distributor distributor = distributorAssembler.fromDto(TestData.getDistributorDto());
+        final Distributor distributor = distributorAssembler.fromDto(TestData.createDistributorDto());
 
         assertThat(distributor).isNotNull();
         assertThat(distributor.getName()).isEqualTo(TestData.DISTRIBUTOR_NAME);
