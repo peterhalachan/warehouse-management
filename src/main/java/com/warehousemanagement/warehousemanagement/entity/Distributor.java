@@ -1,11 +1,14 @@
 package com.warehousemanagement.warehousemanagement.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -38,5 +41,9 @@ public class Distributor implements Serializable {
 
     @Embedded
     private Address address;
+
+    @OneToMany
+    @JoinColumn(name = "DISTRIBUTOR_ID")
+    private List<Product> products;
 
 }
