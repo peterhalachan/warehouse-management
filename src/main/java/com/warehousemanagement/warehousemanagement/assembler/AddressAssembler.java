@@ -5,7 +5,7 @@ import com.warehousemanagement.warehousemanagement.entity.Address;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AddressAssembler extends AbstractAsembler<Address, DistributorDto> {
+public class AddressAssembler implements Assembler<Address, DistributorDto> {
 
     @Override
     public DistributorDto toDto(Address address) {

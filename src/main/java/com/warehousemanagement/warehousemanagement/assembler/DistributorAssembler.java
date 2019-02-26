@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-public class DistributorAssembler extends AbstractAsembler<Distributor, DistributorDto> {
+public class DistributorAssembler implements Assembler<Distributor, DistributorDto> {
 
     private AddressAssembler addressAssembler;
 

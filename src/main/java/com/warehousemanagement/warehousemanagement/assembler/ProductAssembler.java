@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-public class ProductAssembler extends AbstractAsembler<Product, ProductDto> {
+public class ProductAssembler implements Assembler<Product, ProductDto> {
 
     private DistributorRepository distributorRepository;
 
