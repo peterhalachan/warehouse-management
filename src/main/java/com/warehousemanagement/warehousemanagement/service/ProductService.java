@@ -10,6 +10,6 @@ public interface ProductService {
 
     Product updateProduct(ProductDto productDto);
 
-    Page<Product> findAll(Integer pageNumber, Integer pageSize);
+    Page<ProductDto> findAll(Integer pageNumber, Integer pageSize);
 
 }
