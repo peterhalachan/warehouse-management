@@ -1,5 +1,6 @@
 package com.warehousemanagement.warehousemanagement.util;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -103,5 +104,17 @@ public abstract class TestData {
         distributor.setProducts(Collections.singletonList(product));
         product.setDistributor(distributor);
         return product;
+    }
+
+    public static List<Product> createProducts(int numberOfProducts, Distributor distributor) {
+        final List<Product> products = new ArrayList<>(numberOfProducts);
+        for (int i=0; i < numberOfProducts; i++) {
+            final Product product = createProductWIthoutDitributor();
+            product.setProductName(new StringBuilder(product.getProductName()).append(i).toString());
+            products.add(product);
+        }
+        products.forEach(product -> product.setDistributor(distributor));
+        distributor.setProducts(products);
+        return products;
     }
 }
