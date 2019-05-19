@@ -2,6 +2,7 @@ package com.warehousemanagement.warehousemanagement.integration;
 
 import static com.warehousemanagement.warehousemanagement.util.ObjectSerializer.asJsonString;
 import static com.warehousemanagement.warehousemanagement.util.TestData.*;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.NONE;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -17,8 +18,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -28,7 +31,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(classes = { WarehouseManagementApplication.class })
+@SpringBootTest(classes = WarehouseManagementApplication.class)
 public class ProductControllerIntegrationTest {
 
     private static final String PRODUCT_CONTROLLER_PATH = "/product";

@@ -49,7 +49,7 @@ public class DistributorController {
         return ResponseEntity.notFound().build();
     }
 
-    @PutMapping("/update")
+    @PutMapping("update")
     public ResponseEntity<DistributorDto> updateDistributor(@RequestBody DistributorDto distributorDto) {
         final Distributor updatedDistributor = distributorService.updateDistributor(distributorDto);
         if (Objects.nonNull(updatedDistributor)) {
